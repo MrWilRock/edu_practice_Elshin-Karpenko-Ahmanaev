@@ -1,12 +1,9 @@
 # edu_practice_Elshin-Karpenko-Ahmanaev
 uchebnaya practica
 
-# Шаг 1:
-Построим сеть:
-![](/IMAGES/Pasted_image_20260413161555.png)
 
 Установим топологию согласно схеме:
-![[Pasted image 20260413162417.png]]
+![](/IMAGES/Pasted_image_20260413162417.png)
 
 ---
 ## Шаг 2:
@@ -14,16 +11,16 @@ uchebnaya practica
 "Работу выполнил(-а) %фио% студент(-а/-ки) группы %название%, в журнале под номером %число%!"
 
 Роутер 1 (МОСКВА)
-![[Pasted image 20260413163459.png]]
+![](/IMAGES/Pasted_image_20260413163459.png)
 
 Роутер 2 (МОСКВА)
-![[Pasted image 20260413163559.png]]
+![](/IMAGES/Pasted_image_20260413163559.png)
 
 Роутер 3 (НОВОСИБИРСК)
-![[Pasted image 20260413163641.png]]
+![](/IMAGES/Pasted_image_20260413163641.png)
 
 Теперь при каждом запуске роутера будет видна следующая надпись:
-![[Pasted image 20260413164403.png]]
+![](/IMAGES/Pasted_image_20260413164403.png)
 
 
 ---
@@ -31,7 +28,7 @@ uchebnaya practica
 Переименуем все устройства по данному шаблону:
 Сокращённое название страны-Сокращённое название города-Сокращённая роль устройства с порядковым номером.
 
-![[Pasted image 20260413164144.png]]
+![](/IMAGES/Pasted_image_20260413164144.png)
 
 
 ---
@@ -39,23 +36,22 @@ uchebnaya practica
 Раздадим доменные имена согласно тому, как мы их переименовали в "Шаг 3"
 
 Коммутатор 1 (МОСКВА)
-![[Pasted image 20260413165523.png]]
+![](/IMAGES/Pasted_image_20260413165523.png)
 
 Маршрутизатор 1 (МОСКВА)
-![[Pasted image 20260413165614.png]]
+![](/IMAGES/Pasted_image_20260413165614.png)
 
 Маршрутизатор 2 (МОСКВА)
-![[Pasted image 20260413165727.png]]
+![](/IMAGES/Pasted_image_20260413165727.png)
 
 МЛС (МОСКВА)
-![[Pasted image 20260413165854.png]]
+![](/IMAGES/Pasted_image_20260413165854.png)
 
 Маршрутизатор 1 (НОВОСИБИРСК)
-![[Pasted image 20260413170222.png]]
+![](/IMAGES/Pasted_image_20260413170222.png)
 
 Коммутатор 1 (НОВОСИБИРСК)
-![[Pasted image 20260413170345.png]]
+![](/IMAGES/Pasted_image_20260413170345.png)
 
 Коммутатор 2 (НОВОСИБИРСК)
-![[Pasted image 20260413170431.png]]
-
+![](/IMAGES/Pasted_image_20260413170431.png)
