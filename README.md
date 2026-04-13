@@ -3,7 +3,7 @@ uchebnaya practica
 
 # Шаг 1:
 Построим сеть:
-![[Pasted image 20260413161555.png]]
+![](/IMAGES/Pasted image 20260413161555.png)
 
 Установим топологию согласно схеме:
 ![[Pasted image 20260413162417.png]]
