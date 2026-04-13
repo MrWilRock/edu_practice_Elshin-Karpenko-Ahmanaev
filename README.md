@@ -1,11 +1,6 @@
 # edu_practice_Elshin-Karpenko-Ahmanaev
 uchebnaya practica
 
-# fnhsdfkj
-```json
-
-```
-
 # Шаг 1:
 Построим сеть:
 ![[Pasted image 20260413161555.png]]
