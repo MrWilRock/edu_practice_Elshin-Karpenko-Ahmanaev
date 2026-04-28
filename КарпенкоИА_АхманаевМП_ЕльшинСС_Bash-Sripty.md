@@ -241,3 +241,181 @@ _Переделанный скрипт_
 ![](/IMAGES_OBSIDIAN(BASH-SCRIPTS)/Снимок_экрана_2026-04-28_в_16.53.17.png)
 
 *Скрипт успешно выполнил свою задачу*
+
+```
+1. zero.sh
+#!/bin/bash
+
+group="9СА-321"
+name="Сергей"
+surname="Ельшин"
+scholarship_rub=5000
+exchange_rate=96.5
+
+usd=$(echo "scale=2; $scholarship_rub / $exchange_rate" | bc)
+
+echo "Я учусь в $group , зовут меня $name $surname . В этом месяце мне пришла стипендия размером в $scholarship_rub рублей, это сумма в $usd $."
+
+2. start.sh
+#!/bin/bash
+
+echo "Привет, ${1:-Аноним}!"
+
+3. start_2.sh
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Ошибка: имя не передано"
+else
+    echo "Привет, $1!"
+fi
+
+4. file.sh
+#!/bin/bash
+
+if [ -e "$1" ]; then
+    echo "Файл $1 существует"
+else
+    echo "Файл $1 не существует"
+fi
+
+5. my_dir.sh
+#!/bin/bash
+
+if [ -d "$1" ]; then
+    ls "$1"
+else
+    echo "Директория $1 не существует"
+fi
+
+6. dir_m.sh
+#!/bin/bash
+
+if [ -d "$1" ]; then
+    echo "Директория $1 уже существует"
+else
+    mkdir "$1"
+    echo "Директория $1 создана"
+fi
+
+7. user_light.sh
+#!/bin/bash
+
+current_user=$(whoami)
+
+if id "$current_user" &>/dev/null; then
+    echo "Поздравляю! Я нашёл пользователя $current_user!"
+fi
+
+8. user_f.sh
+#!/bin/bash
+
+if grep -q "^$1:" /etc/passwd; then
+    echo "Пользователь $1 нашёлся"
+else
+    echo "Пользователь $1 не найден"
+fi
+
+9. user_f2.sh
+#!/bin/bash
+
+if grep -q "^$1:" /etc/passwd; then
+    echo "Пользователь $1 нашёлся"
+else
+    echo "Пользователь $1 не найден"
+    touch "dont_be_sad_user_${1}_will_be_there_soon.txt"
+    echo "Создан файл dont_be_sad_user_${1}_will_be_there_soon.txt"
+fi
+
+10. finder_liight.sh
+#!/bin/bash
+
+if [ -L "$1" ]; then
+    echo "$1 - символическая ссылка"
+elif [ -f "$1" ]; then
+    echo "$1 - обычный файл"
+elif [ -d "$1" ]; then
+    echo "$1 - директория"
+else
+    echo "$1 - не существует или другой тип"
+fi
+
+11. math.sh
+#!/bin/bash
+
+sum=$(( $1 + $2 ))
+diff=$(( $1 - $2 ))
+prod=$(( $1 * $2 ))
+
+echo "Сумма: $sum"
+echo "Разность: $diff"
+echo "Произведение: $prod"
+
+12. sort.sh
+#!/bin/bash
+
+for arg in "$@"; do
+    echo "$arg"
+done
+
+13. io.sh
+#!/bin/bash
+
+if [ "$1" = "start" ]; then
+    echo "Starting..."
+elif [ "$1" = "stop" ]; then
+    echo "Stopping..."
+else
+    echo "Использование: $0 {start|stop}"
+fi
+
+14. user_use.sh
+#!/bin/bash
+
+for user_dir in /home/*; do
+    if [ -d "$user_dir" ]; then
+        size=$(du -sk "$user_dir" 2>/dev/null | awk '{print $1}')
+        if [ -n "$size" ]; then
+            user=$(basename "$user_dir")
+            echo "$user: $((size / 1024)) MB"
+        fi
+    fi
+done | sort -rn -k2
+
+15. sort_du.sh
+#!/bin/bash
+
+dir="${1:-.}"
+
+if [ -d "$dir" ]; then
+    find "$dir" -type f -printf "%T@ %Td.%Tm.%Ty %p\n" 2>/dev/null | \
+    sort -n | head -3 | awk '{$1=""; print substr($0,2)}'
+else
+    echo "Директория $dir не существует"
+fi
+
+16. dir_info.sh
+#!/bin/bash
+
+dir="${1:-.}"
+
+if [ -d "$dir" ]; then
+    size=$(du -sk "$dir" 2>/dev/null | awk '{print $1}')
+    echo "Общий размер: $size КБ"
+else
+    echo "Директория $dir не существует"
+fi
+
+17. bash_history.sh
+#!/bin/bash
+
+export LC_ALL=C
+
+history_file="${HOME}/.zsh_history"
+
+if [ -f "$history_file" ]; then
+    cat "$history_file" | strings | awk '{print $1}' | sort | uniq -c | sort -rn | head -5 | awk '{print $2 " - " $1 " раз(а)"}'
+else
+    echo "Файл истории не найден: $history_file"
+fi
+```
