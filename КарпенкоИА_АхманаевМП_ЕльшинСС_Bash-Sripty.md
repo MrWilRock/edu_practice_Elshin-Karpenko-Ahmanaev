@@ -250,7 +250,7 @@ group="9СА-321"
 name="Сергей"
 surname="Ельшин"
 scholarship_rub=5000
-exchange_rate=96.5
+exchange_rate=75.3
 
 usd=$(echo "scale=2; $scholarship_rub / $exchange_rate" | bc)
 
